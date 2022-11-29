@@ -2,7 +2,7 @@
 def fizzbuzz():
     for num in range(1, 101):
         if num != 100:
-            if num % 5 == 0 and num % 3 == 0:
+            if num % 3 == 0 and num % 5 == 0:
                 string = "FizzBuzz"
             elif num % 5 == 0:
                 string = "Buzz"

@@ -12,4 +12,4 @@ def fizzbuzz():
                 string = num
             print("{} ".format(string), end="")
         else:
-            print("{}".format(string))
+            print("{}".format(string), end="")

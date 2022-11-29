@@ -10,6 +10,6 @@ def fizzbuzz():
                 string = "Buzz"
             else:
                 string = num
-            print("{} ".format(string))
+            print("{} ".format(string), end="")
         else:
             print("{}".format(string))

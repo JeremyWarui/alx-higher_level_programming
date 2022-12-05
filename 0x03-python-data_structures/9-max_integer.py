@@ -4,8 +4,8 @@ def max_integer(my_list=[]):
     function to return the max integer in the list
     """
     nlen = len(my_list)
-    max_num = 0
     if nlen > 0:
+        max_num = my_list[0]
         for num in my_list:
             if num >= max_num:
                 max_num = num

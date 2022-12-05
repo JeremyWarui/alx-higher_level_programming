@@ -8,7 +8,7 @@ def new_in_list(my_list, idx, element):
         pass
     elif idx < 0:
         return copy
-    elif idx > len(my_list) - 1:
+    elif idx > len(my_list):
         return copy
     else:
         copy[idx] = element

@@ -10,3 +10,4 @@ def square_matrix_simple(matrix=[]):
             copy = list(map(lambda x: x * x, nlist))
             new_list.append(copy)
         return new_list
+    # return list(map(lambda x: list(map(lambda x: x * x, x)), matrix))

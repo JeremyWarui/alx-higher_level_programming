@@ -3,7 +3,7 @@ def weight_average(my_list=[]):
     """
     function that gives average weight score
     """
-    if my_list is not None:
+    if my_list:
         numerator = 0
         denominator = 0
         for tup in my_list:

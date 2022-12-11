@@ -10,16 +10,17 @@ int check_cycle(listint_t *list)
 {
 	listint_t *p, *q;
 
-	if (list != NULL)
-	{
-		p = q = list;
-		while (p && q)
-		{
-			p = p->next;
-			q = q->next->next;
-			if (p == q)
-				return (1);
-		}
-	}
+	if (list == NULL)
+            return (0);
+
+	p = q = list;
+
+	do {
+		p = p->next;
+		q = q->next->next;
+		if (p == q)
+			return (1);
+	} while (p && q);
+	
 	return (0);
 }

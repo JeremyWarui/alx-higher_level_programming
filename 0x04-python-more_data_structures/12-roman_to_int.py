@@ -7,3 +7,4 @@ def roman_to_int(roman_string):
             arabic = digit[roman]
             total += arabic if total < (arabic * 5) else -arabic
         return total
+    return 0

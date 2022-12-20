@@ -10,12 +10,17 @@ class Square:
 
     Args:
         size (int): size of a side in square
-    Methods:
+
+    Function:
+        __init__(self, size)
         area(self)
     """
     def __init__(self, size=0):
         """
         Initilize the size to 0 if None
+
+        Attributes:
+            __size(int): size of side of square
         """
         if isinstance(size) is not int:
             raise TypeError("size must be an integer")
@@ -26,11 +31,8 @@ class Square:
 
     def area(self):
         """
-        Method:
-            Calculate the area of the square given the size
+        Calculate the area of the square given the size
 
-        Args:
-            The class object with all is properties
         Returns:
             Area of square
         """

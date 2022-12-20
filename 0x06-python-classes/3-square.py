@@ -6,7 +6,7 @@
 
 class Square:
     """
-    class square defination
+    Class square defination
 
     Args:
         size: size of a side of square

@@ -1,30 +1,17 @@
 #!/usr/bin/python3
 """
 3-square
-Defines square with private attribute size and public attribute area
+Defines class Square with private attribute size and public attribute area
 """
 
 
 class Square:
+    """ A class that defines a square by its size
     """
-    Class square defination
-
-    Args:
-        size: size of a side of square
-
-    Functions:
-        __init__(self, size)
-        area(self)
-    """
-
     def __init__(self, size=0):
+        """ Method to initialize the square object
         """
-        Initilization square
-
-        Attributes:
-            __size: size of a side of square, defaults to 0 if None
-        """
-        if isinstance(size) is not int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
@@ -32,10 +19,6 @@ class Square:
             self.__size = size
 
     def area(self):
+        """ Method that returns the square are of the object
         """
-        calculates area of square
-
-        Returns:
-            area
-        """
-        return (self.__self)**2
+        return (self.__size ** 2)

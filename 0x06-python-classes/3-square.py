@@ -11,7 +11,7 @@ class Square:
     Args:
         size (int): size of a side in square
 
-    Function:
+    Functions:
         __init__(self, size)
         area(self)
     """
@@ -36,4 +36,4 @@ class Square:
         Returns:
             Area of square
         """
-        return self.__size ** 2
+        return (self.__size) ** 2

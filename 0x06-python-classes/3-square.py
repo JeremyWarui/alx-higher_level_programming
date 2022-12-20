@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-3-square: defines square with private attribute size and public attribute area
+3-square
+Defines square with private attribute size and public attribute area
 """
 
 

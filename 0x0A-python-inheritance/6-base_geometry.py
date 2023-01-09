@@ -10,4 +10,4 @@ class BaseGeometry():
         """
         Public instance method that raises exception
         """
-        raise Exception("area() is  not implemented")
+        raise Exception("area() is not implemented")

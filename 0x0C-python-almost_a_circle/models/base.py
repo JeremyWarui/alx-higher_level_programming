@@ -2,15 +2,11 @@
 """ Module: Base """
 
 
-
 class Base():
     """
     A base model class
-
     Private class attribute: __nb_objects (int)
-
     Public class attribute: id
-
     """
     __nb_objects = 0
 

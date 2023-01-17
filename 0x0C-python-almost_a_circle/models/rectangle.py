@@ -51,8 +51,6 @@ class Rectangle(Base):
         return self.__y
 
     """ SETTERS """
-
-
     @width.setter
     def width(self, value):
         """ width setter """
@@ -61,7 +59,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
+
     @height.setter
     def height(self, value):
         """ height setter """
@@ -70,7 +68,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    
+
     @x.setter
     def x(self, value):
         """ x setter """
@@ -88,10 +86,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be  >= 0")
         self.__y = value
-    
     """ METHODS """
-
-
     def area(self):
         """ function to return area """
         return self.__width * self.__height

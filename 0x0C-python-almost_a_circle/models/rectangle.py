@@ -51,6 +51,7 @@ class Rectangle(Base):
         return self.__y
 
     """ SETTERS """
+
     @width.setter
     def width(self, value):
         """ width setter """
@@ -74,7 +75,7 @@ class Rectangle(Base):
         """ x setter """
         if type(value) is not int:
             raise TypeError("x must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
@@ -82,11 +83,13 @@ class Rectangle(Base):
     def y(self, value):
         """ y setter """
         if type(value) is not int:
-            raise TypeError("y must be >= 0")
-        if value < 0:
-            raise ValueError("y must be  >= 0")
+            raise TypeError("y must be an integer")
+        if value <= 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
+
     """ METHODS """
+
     def area(self):
         """ function to return area """
         return self.__width * self.__height
@@ -100,3 +103,9 @@ class Rectangle(Base):
             rectangle += (" " * self.x)
             rectangle += ("#" * self.width) + "\n"
         print(rectangle, end="")
+
+    def __str__(self):
+        """ prints [Rectangle] (<id>) <x>/<y> - <width>/<height> """
+        return ("[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height))

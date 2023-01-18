@@ -113,7 +113,7 @@ class Rectangle(Base):
         """ update the attributes """
         if args is not None and len(args) is not 0:
             atr_list = ['id', 'width', 'height', 'x', 'y']
-            for i in range(len(args)):
+            for i in enumerate(len(args)):
                 setattr(self, atr_list[i], args[i])
         else:
             for key, value in kwargs.items():

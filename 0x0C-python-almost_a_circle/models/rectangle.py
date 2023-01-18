@@ -114,8 +114,18 @@ class Rectangle(Base):
         arg_list = []
         for i in args:
             arg_list.append(i)
-        self.id = arg_list[0]
-        self.width = arg_list[1]
-        self.height = arg_list[2]
-        self.x = arg_list[3]
-        self.y = arg_list[4]
+        len_args = len(arg_list)
+        if len_args > 0:
+            self.id = arg_list[0]
+            len_args -= 1
+        if len_args > 0:
+            self.__width = arg_list[1]
+            len_args -= 1
+        if len_args > 0:
+            self.__height = arg_list[2]
+            len_args -= 1
+        if len_args > 0:
+            self.__x = arg_list[3]
+            len_args -= 1
+        if len_args > 0:
+            self.__y = arg_list[4]

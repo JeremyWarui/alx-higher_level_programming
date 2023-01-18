@@ -106,38 +106,26 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Prints [Rectangle] (<id>) <x>/<y> - <width>/<height> """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                self.__y, self.__width, self.__height))
+        return ("[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__, self.id, self.__x,
+            self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """ update the attributes """
-        arg_list = []
-        for i in args:
-            arg_list.append(i)
-        len_args = len(arg_list)
-        if len_args > 0:
-            self.id = arg_list[0]
-            len_args -= 1
-        if len_args > 0:
-            self.__width = arg_list[1]
-            len_args -= 1
-        if len_args > 0:
-            self.__height = arg_list[2]
-            len_args -= 1
-        if len_args > 0:
-            self.__x = arg_list[3]
-            len_args -= 1
-        if len_args > 0:
-            self.__y = arg_list[4]
-        if kwargs:
+        if args and len(args) != 0:
+            arg_list = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, arg_list[i], args[i])
+        else:
             for key, value in kwargs.items():
-                if key == 'x':
-                    self.__x = value
-                if key == 'y':
-                    self.__y = value
-                if key == 'width':
-                    self.__width = value
-                if key == 'height':
-                    self.__height = value
-                if key == 'id':
-                    self.id = value
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return dictionary representation"""
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d

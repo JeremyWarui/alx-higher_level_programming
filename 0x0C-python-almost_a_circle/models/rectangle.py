@@ -111,10 +111,26 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ update the attributes """
-        if args is not None and len(args) is not 0:
-            atr_list = ['id', 'width', 'height', 'x', 'y']
-            for i in enumerate(len(args)):
-                setattr(self, atr_list[i], args[i])
+        if args:
+            for k, v in enumerate(args):
+                if k == 0:
+                    self.id = v
+                elif k == 1:
+                    self.width = v
+                elif k == 2:
+                    self.height = v
+                elif k == 3:
+                    self.x = v
+                else:
+                    self.y = v
         else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]

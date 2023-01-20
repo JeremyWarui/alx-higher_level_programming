@@ -4,6 +4,7 @@
 
 import json
 import csv
+import os
 
 
 class Base():
@@ -72,13 +73,16 @@ class Base():
     def load_from_file(cls):
         """ Returns a list of instances """
         filename = cls.__name__ + ".json"
-        with open(filename, 'r', encoding="utf-8") as f:
-            list_str = f.read()
-        list_cls = cls.from_json_string(list_str)
         list_ins = []
-        for dictionary in list_cls:
-            list_ins.append(cls.create(**dictionary))
-        return list_ins
+        if os.path.isfile(filename):
+            with open(filename, 'r', encoding="utf-8") as f:
+                list_str = f.read()
+            list_cls = cls.from_json_string(list_str)
+            for dictionary in list_cls:
+                list_ins.append(cls.create(**dictionary))
+            return list_ins
+        else:
+            return list_ins
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

@@ -1,9 +1,11 @@
 #!/usr/bin/node
 exports.esrever = function (list) {
   const copy = [];
-  let i;
+  let i = 1;
 
-  for (i = 0; i < list.length - 1; i++) { }
+  while (i < list.length - 1) {
+    i++;
+  }
 
   for (; i >= 0; i--) {
     copy.push(list[i]);

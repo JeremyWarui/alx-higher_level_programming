@@ -6,8 +6,9 @@ exports.esrever = function (list) {
     i++;
   }
 
-  for (; i >= 0; i--) {
+  while (i >= 0) {
     copy.push(list[i]);
+    i--;
   }
 
   return copy;

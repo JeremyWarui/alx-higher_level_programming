@@ -2,7 +2,7 @@
 const SquareParent = require('./5-square');
 class Square extends SquareParent {
   charPrint (c) {
-    if (!c) {
+    if (c === undefined) {
       this.print();
     } else {
       let i, j, s;

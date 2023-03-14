@@ -1,16 +1,16 @@
 #!/usr/bin/node
 exports.esrever = function (list) {
-    const copy = [];
-    let i = 0;
-    while (i < list.length - 1) {
-        i++;
-    }
-    // console.log(i);
-    while (i >= 0) {
+  let beg = 0;
+  let end = list.length - 1;
+  let tmp;
 
-        i--;
-        copy.push(list[i]);
-    }
+  while (end > beg) {
+    tmp = list[beg];
+    list[beg] = list[end];
+    list[end] = tmp;
+    beg++;
+    end--;
+  }
 
-    return copy;
+  return list;
 };

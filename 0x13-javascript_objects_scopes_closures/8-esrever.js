@@ -7,8 +7,9 @@ exports.esrever = function (list) {
     }
     // console.log(i);
     while (i >= 0) {
-        copy.push(list[i]);
+
         i--;
+        copy.push(list[i]);
     }
 
     return copy;

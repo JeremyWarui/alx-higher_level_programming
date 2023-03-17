@@ -14,10 +14,11 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name='%s';", (sys.argv[4],))
+    cur.execute("SELECT * FROM states WHERE name=%s;", (sys.argv[4],))
     states = cur.fetchall()
 
     for state in states:
-        print(state)
+        if state == sys.argv[4]:
+            print(state)
     cur.close()
     db.close()

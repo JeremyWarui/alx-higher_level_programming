@@ -17,7 +17,7 @@ if __name__ == "__main__":
     stmt = """
     SELECT cities.id, cities.name, states.name
     FROM cities JOIN states
-    WHERE cities.state_id=states.id;
+    ON cities.state_id=states.id;
     """
     cur.execute(stmt)
 

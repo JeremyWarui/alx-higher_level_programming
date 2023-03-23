@@ -14,11 +14,11 @@ if __name__ == "__main__":
                            format(argv[1], argv[2], argv[3]),
                            pool_pre_ping=True)
 
-    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    st_cty = session.query(State, City).filter(State.id == City.state_id).all()
+    cities = session.query(City, State).filter(City.state_id == State.id).all()
 
-    for state, city in st_cty:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    for city, state in cities:
+        if city and state:
+            print("{}: ({}) {}".format(state.name, city.id, city.name))

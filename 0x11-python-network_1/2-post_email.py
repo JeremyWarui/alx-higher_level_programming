@@ -5,14 +5,14 @@ sends a POST request to the passed URL
 with the email as a parameter, and displays
 the body of the response (decoded in utf-8)
 """
-from urllib import request, parse
+from urllib.parse import urlencode
+from urllib.request import urlopen, Request
 from sys import argv
-
 
 if __name__ == "__main__":
     email = {'email': argv[2]}
-    data = parse.urlencode(email)
+    data = urlencode(email)
     data = data.encode("ascii")
-    req = request.Request(argv[1], data)
-    with request.urlopen(req) as res:
+    req = Request(argv[1], data)
+    with urlopen(req) as res:
         print(res.read().decode('utf-8'))

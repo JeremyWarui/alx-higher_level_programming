@@ -12,7 +12,7 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
 
     data = {'q': "" if len(argv) < 2 else argv[1]}
-
+    print(data)
     try:
         req = requests.post(url, data)
         dict = req.json()
@@ -21,4 +21,4 @@ if __name__ == "__main__":
         else:
             print("No result")
     except ValueError as e:
-        print("Not a valid json")
+        print("Not a valid JSON")

@@ -11,17 +11,16 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    repo = argv[1]
-    owner = argv[2]
-    data = repo, owner
-    url = "https://api.github.com/repos/{}/{}/commits".format(
-        owner, repo
-    )
-    req = get(url)
-    commits = req.json()
-    for i in range(0, 10):
-        print("{}: {}".format(commits[i].get('sha'),
-                              commits[i]
-                              .get('commit')
-                              .get('author')
-                              .get('name')))
+    try:
+        repo = argv[1]
+        owner = argv[2]
+        url = "https://api.github.com/repos/{}/{}/commits".format(
+            owner, repo)
+        req = get(url)
+        commits = req.json()
+        for i in range(0, 10):
+            print("{}: {}".format(commits[i].get('sha'),
+                                  commits[i]
+                                  .get('commit')
+                                  .get('author')
+                                  .get('name')))

@@ -1,4 +1,4 @@
-#!/home/codespace/nvm/current/bin/node
+#!/usr/bin/node
 /* script that reads and prints the content of a file */
 const fs = require('fs');
 

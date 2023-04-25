@@ -6,13 +6,13 @@ request(url, (err, res) => {
   if (err) console.log(err);
   else {
     const obj = {};
-    const body = JSON.parse(res);
-    for (const i in body) {
-      if (body[i].completed) {
-        if (obj[body[i].userId] === undefined) {
-          obj[body[i].userId] = 0;
+    const tasks = JSON.parse(res.body);
+    for (const i in tasks) {
+      if (tasks[i].completed) {
+        if (obj[tasks[i].userId] === undefined) {
+          obj[tasks[i].userId] = 0;
         } else {
-          obj[body[i].userId]++;
+          obj[tasks[i].userId]++;
         }
       }
     }

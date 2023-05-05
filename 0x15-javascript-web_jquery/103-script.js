@@ -14,7 +14,7 @@ window.onload = function () {
 
   function greet () {
     $.ajax({
-      url: `https://www.fourtonfish.com/hellosalut?lang=${langCode.val()}`,
+      url: `https://hellosalut.stefanbohacek.dev/?lang=${langCode.val()}`,
       type: 'GET',
       dataType: 'json'
     })

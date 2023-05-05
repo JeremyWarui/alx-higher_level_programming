@@ -5,7 +5,7 @@ window.onload = function () {
   const hello = $('DIV#hello');
   translate.click(function () {
     $.ajax({
-      url: `https://www.fourtonfish.com/hellosalut?lang=${langCode.val()}`,
+      url: `https://hellosalut.stefanbohacek.dev/?lang=${langCode.val()}`,
       type: 'GET',
       dataType: 'json'
     })

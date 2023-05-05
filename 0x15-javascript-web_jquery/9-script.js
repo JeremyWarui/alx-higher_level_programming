@@ -1,4 +1,4 @@
 const $ = window.$;
-$.get('https://fourtonfish.com/hellosalut/?lang=fr', function (response) {
+$.get('https://hellosalut.stefanbohacek.dev/?lang=fr', function (response) {
   $('div#hello').text(`${response.hello}`);
 });
